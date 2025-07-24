@@ -1,0 +1,52 @@
+# Files to ignore when using Git version control
+
+## LaTeX auxiliary files
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+*.xdv
+
+## Bibliography auxiliary files
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml
+
+## Build directories
+build/
+dist/
+
+## Editor backup files
+*~
+*.backup
+*.swp
+*.tmp
+
+## OS specific files
+.DS_Store
+Thumbs.db
+
+## PDF output (comment out if you want to track the compiled PDF)
+main.pdf
+
+## Figure source files (if you prefer to keep only final versions)
+figures/source/
+
+## Personal notes
+notes.txt
+todo.txt
+
+## Temporary compilation files
+*.synctex.gz
+*.fdb_latexmk

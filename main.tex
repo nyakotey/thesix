@@ -1,0 +1,224 @@
+% =============================================================================
+% KNUST POSTGRADUATE THESIS TEMPLATE
+% Based on University Graduate School Format Guide
+% https://idl.knust.edu.gh/sites/idl.knust.edu.gh/files/2022-01/GUIDE%20FOR%20PREPARATION%20AND%20EVALUATION%20OF%20GRADUATE%20THESIS.pdf
+%
+% This template is designed for MPhil and PhD theses following the
+% university's formatting requirements including:
+% - A4 paper size with specific margins
+% - Times New Roman 12pt font
+% - 1.5 line spacing for main text, single for special sections
+% - Harvard referencing style
+% - Proper pagination and chapter numbering
+% 
+% Author: Nathaniel Nyakotey
+% License: MIT (feel free to modify and share)
+% GitHub: nyakotey/thesix
+% =============================================================================
+
+% DOCUMENT CLASS SETUP
+% For soft copy: use oneside
+% For print version: change oneside to twoside
+\documentclass[12pt,a4paper,oneside]{book}
+
+% =============================================================================
+% PACKAGE IMPORTS
+% =============================================================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{times} % Font - Times New Roman
+\usepackage{mathptmx} % Times font for math
+
+% Page layout and margins
+% SOFT COPY VERSION (current settings)
+\usepackage[
+    a4paper,
+    left=2.5cm,    % Standard margin for soft copy
+    right=2.5cm,   % Standard margin for soft copy
+    top=2.5cm,
+    bottom=2.5cm,
+    includefoot
+]{geometry}
+
+% PRINT VERSION (hardbound copy for KNUST submission)
+% Uncomment the settings below for print version and comment out the soft copy version above
+% Also change "oneside" to "twoside" in the \documentclass line above
+% \usepackage[
+%     a4paper,
+%     left=4cm,      % 4cm gutter margin as per KNUST guidelines
+%     right=2.5cm,   % Outer margin
+%     top=2.5cm,
+%     bottom=2.5cm,
+%     includefoot
+% ]{geometry}
+
+% Line spacing
+\usepackage{setspace}
+
+% Headers and footers
+\usepackage{fancyhdr}
+
+% Bibliography and citations
+% CITATION STYLE OPTIONS:
+% For Harvard: 
+\usepackage[authoryear]{natbib}
+\setcitestyle{authoryear,open={(},close={)}}
+% For IEEE: 
+% \usepackage[numbers,sort&compress]{natbib}
+% For APA: 
+% \usepackage[authoryear]{natbib}
+% \setcitestyle{authoryear,open={(},close={)},citesep={;}}
+
+
+% Figures and tables
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{float}
+
+% Caption formatting
+\usepackage[
+    format=plain,
+    font=singlespacing,
+    labelfont=bf,
+    justification=justified,
+    singlelinecheck=false
+]{caption}
+
+% Math and symbols
+\usepackage{amsmath,amssymb,amsfonts}
+
+% URLs and hyperlinks with PDF bookmarks
+\usepackage{url}
+\usepackage[
+    hidelinks,           % Remove colored boxes around links
+    bookmarks=true,      % Enable PDF bookmarks/outline
+    bookmarksopen=true,  % Open bookmarks panel by default
+    bookmarksnumbered=true, % Number bookmarks
+    pdfstartview=FitH,   % Fit page width when opening
+]{hyperref}
+
+% Additional useful packages
+\usepackage{enumitem}
+\usepackage{appendix}
+\usepackage{pdfpages}
+\usepackage{titlesec}
+
+% Counter for saving page numbers
+\newcounter{savedpage}
+
+% =============================================================================
+% CUSTOM COMMANDS AND FORMATTING
+% =============================================================================
+
+% Chapter title spacing control
+% \titlespacing*{command}{left}{before-sep}{after-sep}
+% Default LaTeX adds ~50pt before chapter titles, we reduce it with these commands
+\titleformat{\chapter}[display]
+    {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{10pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{0pt}{25pt}
+
+% Chapter formatting to ensure each starts on new page (but not necessarily odd pages)
+\let\oldchapter\chapter
+\renewcommand{\chapter}{\newpage\oldchapter}
+
+% Table caption above table, figure caption below figure
+\captionsetup[table]{position=top}
+\captionsetup[figure]{position=bottom}
+
+% =============================================================================
+% THESIS INFORMATION
+% Fill in your thesis details below
+% =============================================================================
+\newcommand{\thesistitle}{Thesis Title Here}
+\newcommand{\thesisauthor}{FirstMiddleSurname}
+\newcommand{\thesispreviousdegrees}{PreviousQualifications e.g. BSc. XXX} % Previous degrees, e.g., B.Sc. in Computer Science
+\newcommand{\thesisdegree}{Master of Philosophy in XXX} % or Doctor of Philosophy
+\newcommand{\thesisdate}{July, 2025}
+\newcommand{\thesisdepartment}{Department Name}
+\newcommand{\thesisuniversity}{Kwame Nkrumah University of Science and Technology}
+\newcommand{\thesissupervisor}{Dr. Supervisor Name}
+\newcommand{\thesishod}{Dr. HOD Name}
+
+% =============================================================================
+% PAGE STYLE SETUP
+% =============================================================================
+\pagestyle{fancy}
+\fancyhf{} % Clear all header and footer fields
+% Page numbers centered at bottom, two lines below margin
+\fancyfoot[C]{\vspace{1em}\thepage}
+% Remove header rule
+\renewcommand{\headrulewidth}{0pt}
+% Different style for chapter opening pages
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyfoot[C]{\vspace{1em}\thepage}
+    \renewcommand{\headrulewidth}{0pt}
+}
+
+% =============================================================================
+% DOCUMENT BEGINS
+% =============================================================================
+\begin{document}
+\onehalfspacing % Ensure 1.5 spacing is active for the entire document
+
+% Front matter uses Roman numerals
+\frontmatter
+\pagenumbering{roman}
+
+% =============================================================================
+% TITLE PAGE
+% =============================================================================
+\input{frontmatter/title}
+
+% =============================================================================
+% PRELIMINARY PAGES
+% =============================================================================
+\input{frontmatter/declaration}
+\input{frontmatter/dedication}
+\input{frontmatter/acknowledgments}
+\input{frontmatter/abstract}
+\input{frontmatter/table_of_contents}
+\input{frontmatter/list_of_figures}
+\input{frontmatter/list_of_tables}
+\input{frontmatter/list_of_abbreviations}
+
+% =============================================================================
+% MAIN BODY
+% =============================================================================
+\mainmatter
+\pagenumbering{arabic}
+\onehalfspacing % Ensure 1.5 spacing for main content
+
+% Include your chapters here
+\input{chapters/chapter1}
+\input{chapters/chapter2}
+\input{chapters/chapter3}
+\input{chapters/chapter4}
+\input{chapters/chapter5}
+\input{chapters/chapter6}
+
+% =============================================================================
+% BACK MATTER
+% =============================================================================
+\backmatter
+
+% Bibliography/References (unnumbered)
+\input{backmatter/bibliography}
+
+% End backmatter and enable appendix numbering without resetting pages
+\clearpage
+% Save current page number
+\setcounter{savedpage}{\value{page}}
+
+% Switch back to mainmatter for appendices but restore page numbering
+\mainmatter
+\setcounter{page}{\value{savedpage}}  % Restore page number
+\setcounter{chapter}{6}               % Continue from last chapter number
+
+% Appendices
+\appendix
+\input{backmatter/appendices}
+
+\end{document}
