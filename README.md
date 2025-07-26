@@ -8,7 +8,7 @@ A comprehensive LaTeX template for MPhil and PhD theses following KNUST's format
 
 This template is designed to be clean, reusable, and easily customizable for different thesis requirements.
 
-Give this Repo a Star ⭐ 
+Give this Repo a Star ⭐
 
 ## Features
 
@@ -75,7 +75,13 @@ pdflatex main.tex
 pdflatex main.tex
 ```
 
-The resultant output is `main.pdf`. Run the above command to view the template
+The resultant output is `main.pdf`. Run the above command to view the template's version.
+
+
+> [!NOTE]
+>
+> Current page settings are for soft-copy viewing only! If you intend to produce a hardbound printout, use the print settings, which are optimized for book binding. Read the [FAQs](#faqs-and-open-issues)
+
 
 ## File Structure
 
