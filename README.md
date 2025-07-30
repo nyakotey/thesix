@@ -141,10 +141,11 @@ To remove a chapter:
 **Tables** (captions above):
 ```latex
 \begin{table}[htbp]
+\singlespace
 \caption{Your table caption}
+\endsinglespace
 \label{tab:yourlabel}
 \centering
-\singlespace
 \begin{tabular}{lcc}
 \toprule
 Header 1 & Header 2 & Header 3 \\
@@ -152,7 +153,6 @@ Header 1 & Header 2 & Header 3 \\
 Data 1 & Data 2 & Data 3 \\
 \bottomrule
 \end{tabular}
-\endsinglespace
 \end{table}
 ```
 
@@ -209,11 +209,12 @@ Contributions are welcome! Please:
 
 > The thesis submitted to the Board of Graduate School should normally be double-sided. The margins are to be: 2.5 cm with the gutter margin, 4 cm.
 
-The hardbound copy of the thesis is intended for double-sided printing (text on both front and back pages). New chapters are required to begin on a right-hand (recto) page. Therefore, blank pages are sometimes inserted when the preceding chapter ends on a right-hand page, ensuring the next chapter starts correctly. The large gutter margin provides sufficient space for binding, preventing text from being obscured by the spine.
+The hardbound copy of the thesis is intended for double-sided printing (text on both front and back pages). Per latex recommended typesetting, new chapters begin on a right-hand (recto) page. Therefore, blank pages are sometimes inserted when the preceding chapter ends on a right-hand page, ensuring the next chapter starts correctly. The large gutter margin provides sufficient space for binding, preventing text from being obscured by the spine.
+If you'd rather not have blank pages or recto behaviour, you can always customize the latex settings. This is a starter template after all.
 
 ### Why are there two blank pages with the same page number before the appendix?
 
-This edge case can occur when the references section ends on a right-hand page and the appendix content follows. In such cases, LaTeX inserts an extra blank page to maintain the correct layout, sometimes resulting in a duplicate page number due to conflict with automatic appendix numbering hack. 
+This edge case can occur when the references section ends on a right-hand page and the appendix content follows. In such cases, LaTeX inserts an extra blank page to maintain the correct layout, sometimes resulting in a duplicate page number due to conflict with automatic appendix numbering hack.
 
 **Current workaround:** Manually delete the duplicate blank page in the final PDF before printing. Community contributions to improve this behavior are welcome—feel free to submit a pull request!
 
