@@ -144,6 +144,7 @@ To remove a chapter:
 \singlespace
 \caption{Your table caption}
 \endsinglespace
+\renewcommand{\arraystretch}{1.5}
 \label{tab:yourlabel}
 \centering
 \begin{tabular}{lcc}
