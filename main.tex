@@ -110,6 +110,10 @@
 % =============================================================================
 % CUSTOM COMMANDS AND FORMATTING
 % =============================================================================
+\setlength{\parindent}{0pt}        % Remove paragraph indentation
+% Custom commands for paragraph spacing control
+\newcommand{\enableparskip}{\setlength{\parskip}{8pt plus 2pt minus 1pt}}
+\newcommand{\disableparskip}{\setlength{\parskip}{0pt}}
 
 % Chapter title spacing control
 % \titlespacing*{command}{left}{before-sep}{after-sep}
@@ -175,9 +179,11 @@
 % PRELIMINARY PAGES
 % =============================================================================
 \input{frontmatter/declaration}
+\enableparskip
 \input{frontmatter/dedication}
 \input{frontmatter/acknowledgments}
 \input{frontmatter/abstract}
+\disableparskip
 \input{frontmatter/table_of_contents}
 \input{frontmatter/list_of_figures}
 \input{frontmatter/list_of_tables}
@@ -188,7 +194,8 @@
 % =============================================================================
 \mainmatter
 \pagenumbering{arabic}
-\onehalfspacing % Ensure 1.5 spacing for main content
+\enableparskip 
+\onehalfspacing 
 
 % Include your chapters here
 \input{chapters/chapter1}
