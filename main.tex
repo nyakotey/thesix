@@ -69,12 +69,20 @@
 % \setcitestyle{authoryear,open={(},close={)},citesep={;}}
 
 
-% Figures and tables
+% Figures and tables and code
 \usepackage{graphicx}
 \usepackage{array}
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{float}
+\usepackage{listings}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    numbers=left,
+    frame=single
+}
 
 % Caption formatting
 \usepackage[

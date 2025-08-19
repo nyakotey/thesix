@@ -80,6 +80,11 @@ The resultant output is `main.pdf`. Run the above command to view the template's
 
 > [!NOTE]
 >
+> Since the introduction of the KNUST Thesis Deposition Management System (TDMS), hardbound copies may no longer be required by your department. The settings may no longer be necessary. Use 2.5cm or 4cm gutter as you please.
+
+
+> [!NOTE]
+>
 > Current page settings are for soft-copy viewing only! If you intend to produce a hardbound printout, use the print settings, which are optimized for book binding. Read the [FAQs](#faqs-and-open-issues)
 
 
@@ -192,8 +197,7 @@ texcount main.tex
 This template is fully compatible with online latex editors such as Overleaf. Simply:
 1. Create a new project on Overleaf
 2. Upload all template files
-3. Set the main document to `main.tex`
-4. Compile with pdfLaTeX
+3. Run Compile
 
 ## Contributing
 
